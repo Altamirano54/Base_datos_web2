@@ -50,5 +50,16 @@ if ($con->query($sqlDelete) === TRUE) {
     echo "❌ Error al eliminar: " . $con->error . "<br>";
 }
 
+$sql = "SELECT * FROM cliente";
+$result = $con->query($sql); // usa $con, no $com
 
+if ($result->num_rows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        print"id: " . $row["id"]. " ";
+        print "nombre:". $row["Nombre"] ."<br>";
+
+    }
+} else {
+    echo "No hay resultados.";
+}
 ?>

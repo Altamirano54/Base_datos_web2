@@ -2,10 +2,10 @@
 require_once "Coneccion.php";
 
 $objetConeccion = new Coneccion();
-$con = $objetConeccion->getConeccio(); // corrige el nombre del método aquí
+$con = $objetConeccion->getConeccio(); 
 
 $sql = "SELECT * FROM cliente";
-$result = $con->query($sql); // usa $con, no $com
+$result = $con->query($sql); 
 
 if ($result->num_rows != 0) {
     while ($row = $result->fetch_assoc()) {
@@ -51,7 +51,7 @@ if ($con->query($sqlDelete) === TRUE) {
 }
 
 $sql = "SELECT * FROM cliente";
-$result = $con->query($sql); // usa $con, no $com
+$result = $con->query($sql); 
 
 if ($result->num_rows != 0) {
     while ($row = $result->fetch_assoc()) {
